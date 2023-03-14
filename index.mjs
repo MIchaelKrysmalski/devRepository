@@ -5,10 +5,10 @@ const app = express()
 const PORT = 3001
 
 app.get("/", (req,res) => {
-    const helloMessage = `Version 2: Hello from ths ${os.hostname()}`;
+    const helloMessage = `Version 0: Hello from ths ${os.hostname()}`;
     res.send(helloMessage);
 })
 
 app.listen(PORT, () => {
-    console.log(`Version 2: Web server is listening on Port ${PORT}`);
+    console.log(`Version 0: Web server is listening on Port ${PORT}`);
 })
