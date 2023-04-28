@@ -1,0 +1,41 @@
+name: Deploy exampleProject1
+
+on:
+  push:
+    branches:
+      - main
+  paths:
+    - 'exampleProject1/**'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      VERSION: ${{ github.sha }}
+      CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
+      REGISTRY_UN: ${{ secrets.REGISTRY_UN }}
+      REGISTRY_PW: ${{ secrets.REGISTRY_PW  }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: ./scripts/build-image.sh exampleProject1
+      - name: Publish
+        run: ./scripts/push-image.sh exampleProject1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+          kubectl-version: v1.24.2
+
+      #
+      # Expands the configuration template and deploys the microservice.
+      #
+      - name: Deploy
+        run: ./scripts/kubernetes/exampleProject1.sh
