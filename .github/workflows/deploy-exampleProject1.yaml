@@ -5,7 +5,7 @@ on:
     branches:
       - main
   paths:
-    - 'exampleProject1/**'
+    - '.'
   workflow_dispatch:
 
 jobs:
