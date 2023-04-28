@@ -1,1 +1,1 @@
-kubectl apply -f exampleproject1.deployment.yml
+kubectl apply -f ./scripts/kubernetes/exampleproject1.deployment.yml
