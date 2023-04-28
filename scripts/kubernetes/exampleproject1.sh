@@ -1,1 +1,1 @@
-kubectl apply -f exampleProject1.deployment.yml
+kubectl apply -f exampleproject1.deployment.yml

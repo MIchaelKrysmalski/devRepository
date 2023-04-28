@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exampleProject1
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exampleProject1
+  template:
+    metadata:
+      labels:
+        app: exampleProject1
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+        - name: exampleProject1
+          image: dockerregistry.dev.bitsandlikes.com/exampleproject1:1
+          ports:
+            - containerPort: 3001
+      restartPolicy: Always
