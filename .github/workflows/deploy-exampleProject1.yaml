@@ -21,9 +21,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build
-        run: ./scripts/build-image.sh exampleProject1
+        run: ./scripts/build-image.sh exampleproject1
       - name: Publish
-        run: ./scripts/push-image.sh exampleProject1
+        run: ./scripts/push-image.sh exampleproject1
       - uses: actions/setup-node@v1
         with:
           node-version: 18
