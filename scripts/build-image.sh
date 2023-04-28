@@ -4,4 +4,5 @@ set -u # or set -o nounset
 : "$VERSION"
 
 export DIR=$1
+echo $CONTAINER_REGISTRY/$DIR:$VERSION
 docker build -t $CONTAINER_REGISTRY/$DIR:$VERSION --file ./$DIR/Dockerfile ./$DIR
