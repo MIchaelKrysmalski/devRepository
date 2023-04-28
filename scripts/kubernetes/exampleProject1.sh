@@ -1,0 +1,1 @@
+kubectl apply -f exampleProject1.deployment.yml
