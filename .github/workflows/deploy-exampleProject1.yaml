@@ -38,4 +38,4 @@ jobs:
       # Expands the configuration template and deploys the microservice.
       #
       - name: Deploy
-        run: ./scripts/kubernetes/exampleproject1.sh
+        run: kubectl apply -f ./scripts/kubernetes/exampleproject1.deployment.yml
