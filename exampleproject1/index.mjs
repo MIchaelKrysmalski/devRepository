@@ -10,5 +10,5 @@ app.get("/", (req,res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Version 1: Web server is listening on Port ${PORT} main`);
+    console.log(`Version 1: Web server main is listening on Port ${PORT} main`);
 })
