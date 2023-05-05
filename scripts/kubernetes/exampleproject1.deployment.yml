@@ -18,6 +18,7 @@ spec:
       containers:
         - name: exampleproject1
           image: dockerregistry.dev.bitsandlikes.com/exampleproject1:1
+          imagePullPolicy: Always
           ports:
             - containerPort: 3001
       restartPolicy: Always
