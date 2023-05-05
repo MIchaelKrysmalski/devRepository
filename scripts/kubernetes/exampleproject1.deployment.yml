@@ -17,7 +17,7 @@ spec:
       - name: regcred
       containers:
         - name: exampleproject1
-          image: dockerregistry.dev.bitsandlikes.com/exampleproject1:latest
+          image: dockerregistry.dev.bitsandlikes.com/exampleproject1
           ports:
             - containerPort: 3001
       restartPolicy: Always
