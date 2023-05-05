@@ -7,4 +7,5 @@ set -u # or set -o nounset
 
 export DIR=$1
 echo $REGISTRY_PW | docker login $CONTAINER_REGISTRY --username $REGISTRY_UN --password-stdin
-docker push --no-cache $CONTAINER_REGISTRY/$DIR:1
+echo $CONTAINER_REGISTRY
+docker push $CONTAINER_REGISTRY/$DIR:1
